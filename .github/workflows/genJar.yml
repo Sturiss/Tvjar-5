@@ -1,6 +1,11 @@
 name: Spider Jar Gen CI
 
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'CHANGELOG.md'
 
 jobs:
   build:
