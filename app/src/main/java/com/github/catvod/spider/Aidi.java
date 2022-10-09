@@ -98,7 +98,7 @@ public class Aidi extends Spider {
                 }
                 boolean show = name.equals("电影") ||
                         name.equals("连续剧") ||
-                        name.equals("动漫") ||
+                        name.equals("樱花动漫") ||
                         name.equals("纪录片") ||
                         name.equals("综艺");
                 if (show) {
