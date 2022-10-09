@@ -94,7 +94,7 @@ public class Aidi extends Spider {
             for (Element ele : elements) {
                 String name = ele.select("span").text();
                 if (name.equals("樱花动漫")) {
-                    name = "动漫";
+                    name = "樱花动漫";
                 }
                 boolean show = name.equals("电影") ||
                         name.equals("连续剧") ||
