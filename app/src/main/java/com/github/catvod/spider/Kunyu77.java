@@ -22,23 +22,25 @@ import java.util.Set;
 
 /**
  * Author: @SDL
+ 
  */
 public class Kunyu77 extends Spider {
-    private static final String siteUrl = "https://clbky.kyky.vip";
+    private static final String siteUrl = "http://api.kunyu77.com";
 
     private String uAgent = "Dalvik/2.1.0 (Linux; U; Android " + Build.VERSION.RELEASE + "; " + Build.MODEL + " Build/" + Build.ID + ")";
 
     private HashMap<String, String> getHeaders(String url) {
         HashMap<String, String> headers = new HashMap<>();
-        headers.put("user-agent", uAgent);
+        headers.put("user-agent", "okhttp/3.12.0");
         return headers;
     }
 
     @Override
     public String homeContent(boolean filter) {
         try {
-            String url = siteUrl + "/api.php/provide/filter";
-            String content = OkHttpUtil.string(url, getHeaders(url));
+            String url = siteUrl + "/api.php/provide/videoDetail?ids=" + ids.get(0);
+            String urlx="/api.php/provide/videoDetail" + ids.get(0);
+            String content = OkHttpUtil.string(url, getHeaders(urlx));
             JSONObject jsonObject = new JSONObject(decryptResponse(content)).getJSONObject("data");
             Iterator<String> keys = jsonObject.keys();
             JSONArray classes = new JSONArray();
@@ -338,7 +340,7 @@ public class Kunyu77 extends Spider {
     public String searchContent(String key, boolean quick) {
         try {
             String url = siteUrl + "/api.php/provide/searchVideo?searchName=" + URLEncoder.encode(key);
-            String content = OkHttpUtil.string(url, getHeaders(url));
+            String content = OkHttpUtil.string(url, sgetHeaders(url));
             JSONObject dataObject = new JSONObject(decryptResponse(content));
             JSONArray jsonArray = dataObject.getJSONArray("data");
             JSONArray videos = new JSONArray();
