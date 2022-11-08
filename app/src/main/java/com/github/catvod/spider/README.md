@@ -1,6 +1,6 @@
-QQ.java
-µ¼°ü
-
+## QQ.java
+//å¯¼åŒ…
+```
 import android.content.Context;
 import android.net.Uri;
 import com.github.catvod.crawler.Spider;
@@ -21,35 +21,38 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import rxhttp.wrapper.annotations.NonNull;
-//¶¨ÒåQQÀà
+```
+
+### å®šä¹‰QQç±»
+```
 public class QQ extends Spider {
   protected JSONObject dn;
   protected JSONObject q = new JSONObject();
-//¶¨Òå·½·¨
+//å®šä¹‰æ–¹æ³•
  private String q(String str, String str2){}
-//ÖØĞ´
+//é‡å†™
 public String categoryContent(String str, String str2, boolean z, HashMap<String, String> hashMap){}
-//ÖØĞ´
+//é‡æ–°
  public String detailContent(List<String> list){}
-//¶¨Òå·½·¨
-//protected HashMap<String, String> getHeaders(String str){}
-//ÖØĞ´
+//è·å¾—å¤´æ•°æ®
+protected HashMap<String, String> getHeaders(String str){}
+//é‡å†™
  public String homeContent(boolean z){}
-//ÖØĞ´
+//é‡å†™
   public String homeVideoContent() {}
-//ÖØĞ´
+//é‡å†™
 public void init(Context context){}
-//Î´Öª
+//æœªçŸ¥
 public String join(@NonNull CharSequence charSequence, @NonNull Iterable iterable) {}
-//ÖØĞ´
+//é‡å†™
 public String playerContent(String str, String str2, List<String> list){}
-//ÖØĞ´
 }
+```
+## LiteApple.java
 
-LiteApple.java
 
-
-//µ¼°ü
+```
+//å¯¼åŒ…
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -77,33 +80,35 @@ import java.util.Random;
 import java.util.Set;
 
 import okhttp3.Call;
+```
 
-
+### å®šä¹‰LiteAppleç±»
+```
 public class LiteApple extends Spider{
  private static final String siteUrl = "http://ht.grelighting.cn/api.php";
-//»ñµÃÍ·
+ //è·å¾—å¤´æ•°æ®
  private HashMap<String, String> getHeaders(String url, String data){}
  private String fakeDevice = null;
  private String tokenKey = null;
 public void init(Context context, String extend){}
-//»ñµÃtoken
-void getTokenKey() 
-//ÖØĞ´
+//è·å¾—token
+void getTokenKey()
+//é‡å†™
  public String homeContent(boolean filter){}
-//ÖØĞ´
+//é‡å†™
  public String homeVideoContent(){}
-//ÖØĞ´
+//é‡å†™
  public String categoryContent(String tid, String pg, boolean filter, HashMap<String, String> extend){}
-//ÖØĞ´
+//é‡å†™
   public String detailContent(List<String> ids) {}
+//é‡å†™
 
-//ÖØĞ´
 public String playerContent(String flag, String id, List<String> vipFlags){}
-//ÖØĞ´
+//é‡å†™
 public String searchContent(String key, boolean quick){}
-//×Ô¶¨Òå
+//è‡ªå®šä¹‰
 protected String decryptResponse(String src){}
-//×Ô¶¨Òå
+//è‡ªå®šä¹‰
 
 byte[] a(String str){}
 byte[] b(byte[] bArr, String str) {}
@@ -111,6 +116,7 @@ String randomString(int length) {}
 String randomMACAddress() {}
 String fakeDid(){}
 String md5(String str){}
+```
 
 
 
