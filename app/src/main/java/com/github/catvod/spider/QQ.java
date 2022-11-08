@@ -44,6 +44,7 @@ public class QQ extends Spider {
         }
     }
 
+    //分类信息
     public String categoryContent(String str, String str2, boolean z, HashMap<String, String> hashMap) {
         String str3;
         try {
