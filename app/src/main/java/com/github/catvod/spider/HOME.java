@@ -8,22 +8,14 @@ import com.github.catvod.crawler.SpiderDebug;
 import com.github.catvod.utils.okhttp.OkHttpUtil;
 
 import org.json.JSONArray;
-import org.json.JSONException;
+
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
+
 import org.jsoup.select.Elements;
 
-import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
-import java.util.regex.Matcher;
+
 import java.util.regex.Pattern;
 
 /**
@@ -33,10 +25,9 @@ import java.util.regex.Pattern;
  */
 public class HOME extends Spider {
 
-    private static final String siteUrl = "http://localhost:8080";
-    private static final String siteHost = "localhost:8080";
+    private static final String siteUrl = "http://192.168.1.1:8888";
+    private static final String siteHost = "192.168.1.1:8888";
 
-    private Pattern re_fenglei = Pattern.compile("<pre>(.*?)</pre>");
     @Override
     public void init(Context context) {
         super.init(context);
@@ -44,6 +35,7 @@ public class HOME extends Spider {
 
     public String homeContent(boolean filter) {
         try {
+            JSONObject result = new JSONObject();
             JSONArray classes = new JSONArray();
             String fenlei_html = OkHttpUtil.string(siteUrl, null);
             Document fenlei_doc = Jsoup.parse(fenlei_html, "UTF-8");
@@ -56,10 +48,12 @@ public class HOME extends Spider {
                 jsonObject.put("type_name", links.get(i).text());
                 classes.put(jsonObject);
 
+
+                result.put("class",classes);
             }
 
           // System.out.println("=============："+classes);
-            return classes.toString();
+            return result.toString();
         }catch(Exception e){
             SpiderDebug.log(e);
         }
