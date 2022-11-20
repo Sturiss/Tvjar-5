@@ -45,7 +45,7 @@ public class HOME extends Spider {
                 // 获取超链接路径
                 jsonObject.put("type_id", links.get(i).attr("href"));
                 // 获取文本信息
-                jsonObject.put("type_name", links.get(i).text());
+                jsonObject.put("type_name", links.get(i).text().split("/")[0]);
                 classes.put(jsonObject);
 
 
