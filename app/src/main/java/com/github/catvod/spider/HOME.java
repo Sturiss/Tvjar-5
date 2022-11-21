@@ -74,7 +74,7 @@ public class HOME extends Spider {
             for (int i = 1; i < links.size(); i++) {
                 JSONObject jsonObject = new JSONObject();
                 // 获取超链接路径
-                jsonObject.put("vod_id", tid+"/"+links.get(i).attr("href"));
+                jsonObject.put("vod_id", tid+links.get(i).attr("href"));
                 // 获取文本信息
                 jsonObject.put("vod_name", links.get(i).text().split("/")[0]);
                 list.put(jsonObject);
@@ -94,6 +94,7 @@ public class HOME extends Spider {
             JSONObject result = new JSONObject();
             JSONArray list = new JSONArray();
             String durl = siteUrl + "/" + ids.get(0);
+            System.out.println("播放地址："+durl);
             String don_html = OkHttpUtil.string(durl, null);
             Document don_doc = Jsoup.parse(don_html, "UTF-8");
             Elements links = don_doc.getElementsByTag("a");
@@ -110,6 +111,7 @@ public class HOME extends Spider {
                 }
 
                  }
+            System.out.println("信息："+info);
             info.put("vod_play_from",play_from);
             list.put(info);
             result.put("list",list);
