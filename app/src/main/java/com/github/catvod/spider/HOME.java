@@ -106,8 +106,8 @@ public class HOME extends Spider {
                 play_from = play_from + links3.get(i).text().split("/")[0] + "$$$";
             }
             String surl = durl + links3.get(i).attr("href");
-            Response res3 = OkHttpUtil.GET(surl, null);
-            Document res3_doc = Jsoup.parse(OkHttpUtil.getBody(res3), "UTF-8");
+            String ddeta_html  = OkHttpUtil.string(surl, null);
+            Document res3_doc = Jsoup.parse(ddeta_html, "UTF-8");
             Elements links4 = res3_doc.getElementsByTag("a");
 
             String c = "";
@@ -147,7 +147,7 @@ public class HOME extends Spider {
         result3.put("list", list_info);
 
 
-            return result.toString();
+            return result3.toString();
         }catch(Exception e){
             SpiderDebug.log(e);
         }
