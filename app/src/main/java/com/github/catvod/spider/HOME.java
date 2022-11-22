@@ -96,7 +96,7 @@ public class HOME extends Spider {
             String durl =ids.get(0);
 
 
-            String deta_html = OkHttpUtil.string(curl, null);
+            String deta_html = OkHttpUtil.string(durl, null);
             Document suon_doc = Jsoup.parse(deta_html,"UTF-8");
             Elements links3 = suon_doc.getElementsByTag("a");
 
