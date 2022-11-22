@@ -102,54 +102,71 @@ public class HOME extends Spider {
 
             String play_from = "";
             for (int i = 1; i < links3.size(); i++) {
-            if (i == links3.size() - 1) {
-                play_from = play_from + links3.get(i).text().split("/")[0];
-            } else {
-                play_from = play_from + links3.get(i).text().split("/")[0] + "$$$";
-            }
-            String surl = durl + links3.get(i).attr("href");
-            String ddeta_html  = OkHttpUtil.string(surl, null);
-            Document res3_doc = Jsoup.parse(ddeta_html, "UTF-8");
-            Elements links4 = res3_doc.getElementsByTag("a");
-
-            String c = "";
-            for (int j = 1; j < links4.size(); j++) {
-                String a = "";
-                String b = "";
-                a = links4.get(j).text() + "$";
-                if (j == links4.size() - 1) {
-                    b = surl + links4.get(j).attr("href");
+                if (i == links3.size() - 1) {
+                    play_from = play_from + links3.get(i).text().split("/")[0];
                 } else {
-                    b = surl + links4.get(j).attr("href") + "#";
+                    play_from = play_from + links3.get(i).text().split("/")[0] + "$$$";
+                }
+                String surl = durl + links3.get(i).attr("href");
+                String ddeta_html  = OkHttpUtil.string(surl, null);
+                Document res3_doc = Jsoup.parse(ddeta_html, "UTF-8");
+                Elements links4 = res3_doc.getElementsByTag("a");
+
+                String c = "";
+                for (int j = 1; j < links4.size(); j++) {
+                    String a = "";
+                    String b = "";
+                    a = links4.get(j).text() + "$";
+                    if (j == links4.size() - 1) {
+                        b = surl + links4.get(j).attr("href");
+                    } else {
+                        b = surl + links4.get(j).attr("href") + "#";
+
+                    }
+
+                    c = c + a + b;
 
                 }
-
-                c = c + a + b;
-
-            }
-            surls.add(c);
-
-        }
-        String d = "";
-        for (int k = 0; k < surls.size(); k++) {
-            if (k == surls.size() - 1) {
-                d = d + surls.get(k);
-            } else {
-                d = d + surls.get(k) + "$$$";
+                surls.add(c);
 
             }
-        }
+            String d = "";
+            for (int k = 0; k < surls.size(); k++) {
+                if (k == surls.size() - 1) {
+                    d = d + surls.get(k);
+                } else {
+                    d = d + surls.get(k) + "$$$";
 
-        info.put("vod_id", ids.get(0));
-        info.put("vod_name", ids.get(1));
+                }
+            }
 
-        info.put("vod_play_from", play_from);
-        info.put("vod_play_url", d);
-        list_info.put(info);
-        result3.put("list", list_info);
+            info.put("vod_id", ids.get(0));
+            info.put("vod_name", ids.get(1));
+
+            info.put("vod_play_from", play_from);
+            info.put("vod_play_url", d);
+            list_info.put(info);
+            result3.put("list", list_info);
 
 
-        JSONObject cc = JSONObject.parseObject("{\"list\": [{\"vod_id\": \"1902\",\"vod_name\": \"海岸村恰恰恰\",\"vod_pic\": \"https:\/\/pic.imgdb.cn\/item\/61463fd12ab3f51d91a0f44d.jpg\",\"type_name\": \"剧情\",\"vod_year\": \"2021\",\"vod_area\": \"韩国\",\"vod_remarks\": \"更新至第8集\",\"vod_actor\": \"申敏儿,金宣虎,李相二,孔敏晶,徐尚沅,禹美华,朴艺荣,李世亨,边胜泰,金贤佑,金英玉\",\"vod_director\": \"柳济元\",\"vod_content\": \"海岸村恰恰恰剧情:　　韩剧海岸村恰恰恰 갯마을 차차차改编自2004年的电影《我的百事通男友洪班长》，海岸村恰恰恰 갯마을 차차차讲述来自大都市的牙医（申敏儿 饰）到充满人情味的海岸村开设牙医诊所，那里住着一位各方面都\",\"vod_play_from\": \"qiepian$$$yun3edu\", \"vod_play_url\": \"第1集$1902-1-1#第2集$1902-1-2#第3集$1902-1-3#第4集$1902-1-4#第5集$1902-1-5#第6集$1902-1-6#第7集$1902-1-7#第8集$1902-1-8$$$第1集$1902-2-1#第2集$1902-2-2#第3集$1902-2-3#第4集$1902-2-4#第5集$1902-2-5#第6集$1902-2-6#第7集$1902-2-7#第8集$1902-2-8\" 	}]}");
+            JSONObject cc = new JSONObject();
+            JSONObject ccinfo = new JSONObject();
+            JSONArray list_infos = new JSONArray();
+            ccinfo.put("vod_id","1902");
+            ccinfo.put("vod_name","海岸村恰恰恰");
+            ccinfo.put("vod_pic","剧情");
+            ccinfo.put("vod_year","2021");
+            ccinfo.put("vod_area","韩国");
+            ccinfo.put("vod_remarks","更新至第8集");
+            ccinfo.put("vod_actor","申敏儿,金宣虎,李相二,孔敏晶,徐尚沅,禹美华,朴艺荣,李世亨,边胜泰,金贤佑,金英玉");
+            ccinfo.put("vod_director","柳济元");
+            ccinfo.put("vod_content","qiepian$$$yun3edu");
+            ccinfo.put("vod_play_url","第1集$1902-1-1#第2集$1902-1-2#第3集$1902-1-3#第4集$1902-1-4#第5集$1902-1-5#第6集$1902-1-6#第7集$1902-1-7#第8集$1902-1-8$$$第1集$1902-2-1#第2集$1902-2-2#第3集$1902-2-3#第4集$1902-2-4#第5集$1902-2-5#第6集$1902-2-6#第7集$1902-2-7#第8集$1902-2-8");
+            list_infos.put(ccinfo);
+            cc.put("list",list_infos);
+
+            
+
             //return result3.toString();
             return cc.toString();
         }catch(Exception e){
