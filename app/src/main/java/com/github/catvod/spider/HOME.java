@@ -16,6 +16,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -92,6 +93,7 @@ public class HOME extends Spider {
             JSONArray list_info = new JSONArray();
 
             ArrayList<String> surls = new ArrayList<String>();
+            String durl =ids.get(0);
 
 
             String deta_html = OkHttpUtil.string(curl, null);
