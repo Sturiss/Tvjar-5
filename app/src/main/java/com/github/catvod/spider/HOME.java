@@ -149,7 +149,7 @@ public class HOME extends Spider {
         result3.put("list", list_info);
 
 
-        str cc = "{
+        String cc = "{
 	\"list\": [{
 		\"vod_id\": \"1902\",
 		\"vod_name\": \"海岸村恰恰恰\",
