@@ -141,7 +141,7 @@ public class HOME extends Spider {
             }
 
             info.put("vod_id", ids.get(0));
-            info.put("vod_name", ids.get(1));
+            info.put("vod_name", "");
 
             info.put("vod_play_from", play_from);
             info.put("vod_play_url", d);
