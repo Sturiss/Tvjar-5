@@ -40,6 +40,7 @@ public class HOME extends Spider {
             Document fenlei_doc = Jsoup.parse(fenlei_html, "UTF-8");
             Elements links = fenlei_doc.getElementsByTag("a");
             for (int i=1;i<links.size();i++) {
+                if(links.get(i).text().indexOf("/")!=-1){
                 JSONObject jsonObject = new JSONObject();
                 // 获取超链接路径
                 jsonObject.put("type_id", links.get(i).attr("href"));
@@ -47,6 +48,7 @@ public class HOME extends Spider {
                 jsonObject.put("type_name", links.get(i).text().split("/")[0]);
                 classes.put(jsonObject);
                 result.put("class",classes);
+                }
             }
             // System.out.println("=============："+classes);
             return result.toString();
@@ -69,6 +71,7 @@ public class HOME extends Spider {
             result.put("limit",links.size()-1);
             result.put("total",links.size()-1);
             for (int i = 1; i < links.size(); i++) {
+                if(links.get(i).text().indexOf("/")!=-1){
                 JSONObject jsonObject = new JSONObject();
                 // 获取超链接路径
                 jsonObject.put("vod_id", curl+links.get(i).attr("href"));
@@ -76,6 +79,7 @@ public class HOME extends Spider {
                 jsonObject.put("vod_name", links.get(i).text().split("/")[0]);
                 list.put(jsonObject);
                 result.put("list", list);
+                }
             }
 
             return result.toString();
