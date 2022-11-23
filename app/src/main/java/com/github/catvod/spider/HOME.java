@@ -107,10 +107,12 @@ public class HOME extends Spider {
 
             String play_from = "";
             for (int i = 1; i < links3.size(); i++) {
+                if(links3.get(i).text().indexOf("/")!=-1){
                 if (i == links3.size() - 1) {
                     play_from = play_from + links3.get(i).text().split("/")[0];
                 } else {
                     play_from = play_from + links3.get(i).text().split("/")[0] + "$$$";
+                }
                 }
                 String surl = durl + links3.get(i).attr("href");
                 String ddeta_html  = OkHttpUtil.string(surl, null);
