@@ -251,7 +251,7 @@ public class Juhuang extends Spider {
                 kkk=kkk+ids.get(k)+"|";
 
             }
-            vodAtom.put("vod_content", kkk);
+            vodList.put("vod_content", kkk);
             Map<String, String> vod_play = new TreeMap<>(new Comparator<String>() {
                 @Override
                 public int compare(String o1, String o2) {
