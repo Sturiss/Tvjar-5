@@ -149,26 +149,8 @@ public class HOME extends Spider {
             result3.put("list", list_info);
 
 
-            JSONObject cc = new JSONObject();
-            JSONObject ccinfo = new JSONObject();
-            JSONArray list_infos = new JSONArray();
-            ccinfo.put("vod_id","1902");
-            ccinfo.put("vod_name","海岸村恰恰恰");
-            ccinfo.put("vod_pic","剧情");
-            ccinfo.put("vod_year","2021");
-            ccinfo.put("vod_area","韩国");
-            ccinfo.put("vod_remarks","更新至第8集");
-            ccinfo.put("vod_actor","申敏儿,金宣虎,李相二,孔敏晶,徐尚沅,禹美华,朴艺荣,李世亨,边胜泰,金贤佑,金英玉");
-            ccinfo.put("vod_director","柳济元");
-            ccinfo.put("vod_content","qiepian$$$yun3edu");
-            ccinfo.put("vod_play_url","第1集$1902-1-1#第2集$1902-1-2#第3集$1902-1-3#第4集$1902-1-4#第5集$1902-1-5#第6集$1902-1-6#第7集$1902-1-7#第8集$1902-1-8$$$第1集$1902-2-1#第2集$1902-2-2#第3集$1902-2-3#第4集$1902-2-4#第5集$1902-2-5#第6集$1902-2-6#第7集$1902-2-7#第8集$1902-2-8");
-            list_infos.put(ccinfo);
-            cc.put("list",list_infos);
 
-            
-
-            //return result3.toString();
-            return cc.toString();
+            return result3.toString();
         }catch(Exception e){
             SpiderDebug.log(e);
         }
