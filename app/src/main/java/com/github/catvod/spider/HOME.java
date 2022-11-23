@@ -75,6 +75,7 @@ public class HOME extends Spider {
                 JSONObject jsonObject = new JSONObject();
                 // 获取超链接路径
                 jsonObject.put("vod_id", curl+links.get(i).attr("href"));
+                jsonObject.put("vod_pic", curl+links.get(i).attr("href")+"1.jpg");
                 // 获取文本信息
                 jsonObject.put("vod_name", links.get(i).text().split("/")[0]);
                 list.put(jsonObject);
