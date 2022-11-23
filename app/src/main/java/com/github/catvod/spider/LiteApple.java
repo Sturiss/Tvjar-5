@@ -302,13 +302,7 @@ public class LiteApple extends Spider {
             vodAtom.put("vod_area", vObj.getString("area"));
             vodAtom.put("vod_remarks", vObj.getString("updateInfo"));
             vodAtom.put("vod_actor", vObj.getString("actor"));
-            String kkk="";
-            for(int k=0;k<ids.size();k++){
-                kkk=kkk+ids.get(k)+"|";
-
-            }
-            vodAtom.put("vod_content", kkk);
-            //vodAtom.put("vod_content", vObj.getString("content").trim());
+            vodAtom.put("vod_content", vObj.getString("content").trim());
 
             ArrayList<String> playUrls = new ArrayList<>();
 
