@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import com.github.catvod.crawler.Spider;
 import com.github.catvod.crawler.SpiderDebug;
 import com.github.catvod.utils.okhttp.OkHttpUtil;
+import com.github.catvod.utils.Misc;
 
 import org.json.JSONArray;
 
@@ -158,5 +159,22 @@ public class HOME extends Spider {
 
         return "";
     }
+    public String playerContent(String flag, String id, List<String> vipFlags) {
+        try {
+            if (Misc.isVideoFormat(id)) {
+                JSONObject result = new JSONObject();
+                result.put("parse", 0);
+                result.put("header", "");
+                result.put("playUrl", "");
+                result.put("url", id);
+                return result.toString();
+            }
+            return "";
+        } catch (Exception e) {
+            SpiderDebug.log(e);
+        }
+        return "";
+    }
+
 }
 
