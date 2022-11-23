@@ -303,7 +303,7 @@ public class LiteApple extends Spider {
             vodAtom.put("vod_remarks", vObj.getString("updateInfo"));
             vodAtom.put("vod_actor", vObj.getString("actor"));
             String kkk="";
-            for(int k=0;i<ids.sizs();i++){
+            for(int k=0;i<ids.size();i++){
                 kkk=kkk+ids.get(k)+"|";
 
             }
