@@ -27,7 +27,7 @@ public class JS extends Spider {
         V8 v8 =V8.createV8Runtime();
         Object result = v8.executeScript("var json = '{\"class\":[{\"type_id\"：\"dianying\",\"type_name\": \"电影\"},{\"type_id\"：\"lianxuju\",\"type_name\": \"连续剧\"}]}'\n;json;");
         v8.close();
-        return result.toString();
+        return "{\"class\":[{\"type_id\"：\"dianying\",\"type_name\": \"电影\"},{\"type_id\"：\"lianxuju\",\"type_name\": \"连续剧\"}]}";
     }
 
 
