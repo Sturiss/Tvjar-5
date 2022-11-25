@@ -20,10 +20,8 @@ import java.util.HashMap;
 import java.util.List;
 
 public class JS extends Spider {
-    public static void print(){
-        System.out.println("====================" +
-                           "===     调  试    ===" +
-                           "====================");
+    public void init(Context context) {
+        super.init(context);
     }
     public String homeContent(boolean filter) {
         V8 v8 =V8.createV8Runtime();
