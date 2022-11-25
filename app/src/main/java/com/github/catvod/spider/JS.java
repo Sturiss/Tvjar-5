@@ -36,7 +36,7 @@ public class JS extends Spider {
     public String homeContent(boolean filter) {
         V8 v8 =V8.createV8Runtime();
 //"{\"class\":[{\"type_id\":\"a\",\"type_name\":\"bh\"}]}"
-        Object result = v8.executeScript("'{\"class\":[{\"type_id\":\"a\",\"type_name\":\"bh\"}]}'");
+        Object result = v8.executeScript("'{\"class\":[{\"type_id\":\"a\",\"type_name\":\"bhJJJJJJ\"}]}'");
         v8.close();
         
         return result.toString();
