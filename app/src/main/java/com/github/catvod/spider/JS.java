@@ -34,13 +34,13 @@ public class JS extends Spider {
     }
 
     public String homeContent(boolean filter) {
-    //    V8 v8 =V8.createV8Runtime();
+        V8 v8 =V8.createV8Runtime();
 //"{//\"class\":[{\"type_id\":\"a\",\"type_name\":\"bh\"}]}"
     //    Object result = v8.executeScript("'{\"class\":[{\"type_id\":\"a\",\"type_name\":\"bhJJJJJJ\"}]}'");
     //    v8.close();
         
         //return result.toString();
-    return "{\"class\":[{\"type_id\":\"a\",\"type_name\":\"bhddddddd\"}]}";
+    return "{\"class\":[{\"type_id\":\"a\",\"type_name\":\"bhyyyyyd\"}]}";
     }
 
     public String categoryContent(String tid, String pg, boolean filter, HashMap<String, String> extend) {
