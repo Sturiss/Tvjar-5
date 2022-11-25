@@ -15,6 +15,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import org.jsoup.select.Elements;
+import com.eclipsesource.v8.V8;
 
 
 import java.util.ArrayList;
@@ -33,7 +34,13 @@ public class JS extends Spider {
     }
 
     public String homeContent(boolean filter) {
-    return "{\"class\":[{\"type_id\":\"a\",\"type_name\":\"bh\"}]}";
+        V8 v8 =V8.createV8Runtime();
+//"{\"class\":[{\"type_id\":\"a\",\"type_name\":\"bh\"}]}"
+        Object result = v8.executeScript("'{\"class\":[{\"type_id\":\"a\",\"type_name\":\"bh\"}]}'");
+        v8.close();
+        
+        return result.toString();
+    //return "{\"class\":[{\"type_id\":\"a\",\"type_name\":\"bh\"}]}";
     }
 
     public String categoryContent(String tid, String pg, boolean filter, HashMap<String, String> extend) {
