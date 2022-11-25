@@ -3,7 +3,7 @@ package com.github.catvod.spider;
 import android.content.Context;
 
 import com.github.catvod.crawler.Spider;
-import com.eclipsesource.v8.V8;
+//import com.eclipsesource.v8.V8;
 
 import com.github.catvod.crawler.SpiderDebug;
 import com.github.catvod.utils.Misc;
@@ -24,8 +24,8 @@ public class JS extends Spider {
         super.init(context);
     }
     public String homeContent(boolean filter) {
-        V8 v8 =V8.createV8Runtime();
-        Object result = v8.executeScript("var json = '{\"class\":[{\"type_id\"：\"dianying\",\"type_name\": \"电影\"},{\"type_id\"：\"lianxuju\",\"type_name\": \"连续剧\"}]}'\n;json;");
+        //V8 v8 =V8.createV8Runtime();
+        //Object result = v8.executeScript("var json = '{\"class\":[{\"type_id\"：\"dianying\",\"type_name\": \"电影\"},{\"type_id\"：\"lianxuju\",\"type_name\": \"连续剧\"}]}'\n;json;");
         v8.close();
         return "{\"class\":[{\"type_id\"：\"dianying\",\"type_name\": \"电影\"},{\"type_id\"：\"lianxuju\",\"type_name\": \"连续剧\"}]}";
     }
