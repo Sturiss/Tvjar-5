@@ -33,29 +33,7 @@ public class JS extends Spider {
     }
 
     public String homeContent(boolean filter) {
-        try {
-            JSONObject result = new JSONObject();
-            JSONArray classes = new JSONArray();
-            String fenlei_html = OkHttpUtil.string(siteUrl, null);
-            Document fenlei_doc = Jsoup.parse(fenlei_html, "UTF-8");
-            Elements links = fenlei_doc.getElementsByTag("a");
-            for (int i=1;i<links.size();i++) {
-                if(links.get(i).text().indexOf("/")!=-1){
-                JSONObject jsonObject = new JSONObject();
-                // 获取超链接路径
-                jsonObject.put("type_id", links.get(i).attr("href"));
-                // 获取文本信息
-                jsonObject.put("type_name", links.get(i).text().split("/")[0]);
-                classes.put(jsonObject);
-                result.put("class",classes);
-                }
-            }
-            // System.out.println("=============："+classes);
-            return result.toString();
-        }catch(Exception e){
-            SpiderDebug.log(e);
-        }
-        return "";
+    return "{\"class\":[{\"type_id\":\"a\",\"type_name\":\"bh\"}]}";
     }
 
     public String categoryContent(String tid, String pg, boolean filter, HashMap<String, String> extend) {
