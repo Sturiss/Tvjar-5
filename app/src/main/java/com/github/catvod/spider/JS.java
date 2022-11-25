@@ -39,8 +39,8 @@ public class JS extends Spider {
         Object result = v8.executeScript("'{\"class\":[{\"type_id\":\"a\",\"type_name\":\"bhJJJJJJ\"}]}'");
         v8.close();
         
-        return result.toString();
-    //return "{\"class\":[{\"type_id\":\"a\",\"type_name\":\"bh\"}]}";
+        //return result.toString();
+    return "{\"class\":[{\"type_id\":\"a\",\"type_name\":\"bhddddddd\"}]}";
     }
 
     public String categoryContent(String tid, String pg, boolean filter, HashMap<String, String> extend) {
